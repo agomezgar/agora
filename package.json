@@ -1,0 +1,70 @@
+{
+  "name": "agora",
+  "version": "1.0.0",
+  "description": "It's designed to interchange impressions between teachers about their pupils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build:linux": "electron-builder -l",
+    "build:win": "electron-builder -w"
+  },
+  "keywords": [
+    "agora"
+  ],
+  "author": "Antonio Gómez <antonio@aprendizdetecnologo.com>",
+  "license": "ISC",
+  "build": {
+    "appId": "juandeavila.test",
+    "asar": "true",
+    "extraResources": [
+      "./build",
+      "./images"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "snap",
+        "deb"
+      ],
+      "icon": "build/icons/icon.png",
+      "publish": [
+        "github"
+      ]
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "stable",
+      "plugs": [
+        "default"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icons/icon.ico",
+      "publish": [
+        "github"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agomezgar/masayloBlockly"
+  },
+  "devDependencies": {
+    "electron": "^25.3.0",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1"
+  }
+}

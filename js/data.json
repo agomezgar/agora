@@ -1,0 +1,7 @@
+{
+    "host":"tuservidor",
+    "user":"tuusuario",
+    "password":"tupassword",
+    "database":"tubasededatos",
+    "timezone":"utc"
+}
