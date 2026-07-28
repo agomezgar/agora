@@ -1,7 +1,7 @@
 {
   "name": "agora",
-  "version": "1.0.0",
-  "description": "It's designed to interchange impressions between teachers about their pupils",
+  "version": "1.1.0",
+  "description": "Intercambio de información de alumnado para profesores",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "build": {
     "appId": "juandeavila.test",
-    "asar": "true",
+    "asar": true,
     "extraResources": [
       "./build",
       "./images"
@@ -27,7 +27,7 @@
         "snap",
         "deb"
       ],
-      "icon": "build/icons/icon.png",
+      "icon": "build/icons",
       "publish": [
         "github"
       ]
@@ -65,6 +65,8 @@
   "dependencies": {
     "electron-reload": "^2.0.0-alpha.1",
     "fs": "^0.0.1-security",
-    "mysql": "^2.18.1"
+    "fs-extra": "^11.4.0",
+    "mysql": "^2.18.1",
+    "pdfkit": "^0.13.0"
   }
 }

@@ -89,11 +89,19 @@ curso.addEventListener('change',()=>{
         "valor": curso.selectedIndex
 
     }
+    pantallaIdentificacion.innerHTML="";
     nombreAlumno.innerHTML="";
     etAlumno.hidden=false;
     nombreAlumno.hidden=false;
     pantallaPrincipal.innerHTML="";
-
+    let impresionGrupo=document.createElement("button");
+    impresionGrupo.innerText="Generar pdf de todo el grupo";
+    pantallaIdentificacion.appendChild(impresionGrupo);
+    impresionGrupo.addEventListener('click',()=>{
+        console.log("Pidiendo impresion");
+        console.log(datos.grupo);
+        window.api.enviar("pdfGrupo",datos)
+    })
 
     window.api.enviar("dameAlumnos",datos);
 })
@@ -173,6 +181,14 @@ pantallaPrincipal.innerHTML="";
             fila.appendChild(impresionR);
 
         }
+        let imprimeAlumno=document.createElement("button");
+        imprimeAlumno.innerText="Generar pdf";
+        pantallaPrincipal.appendChild(imprimeAlumno);
+        imprimeAlumno.addEventListener('click',()=>{
+
+            window.api.enviar("pdfAlumno",impresiones);
+        });
+
         
     }else{
         pantallaPrincipal.innerHTML="No hay observaciones registradas para la alumna o alumno"
